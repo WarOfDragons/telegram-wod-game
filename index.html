@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>War of Dragons</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="game">
+    <header class="topbar">
+      <h1>War of Dragons</h1>
+      <p class="subtitle">Legenda wojny smoków — walcz o złoto, chwałę i przetrwanie</p>
+    </header>
+
+    <section class="stats">
+      <div class="stat-box">Class: <span id="playerClass">None</span></div>
+      <div class="stat-box">Level: <span id="level">1</span></div>
+      <div class="stat-box">XP: <span id="xp">0</span></div>
+      <div class="stat-box">Gold: <span id="gold">0</span></div>
+      <div class="stat-box">Power: <span id="power">1</span></div>
+    </section>
+
+    <section class="class-section">
+      <h2>Choose your class</h2>
+      <div class="classes">
+        <div class="card">
+          <h3>Spice</h3>
+          <p>Szybki wojownik. Lekki, zwinny, skuteczny.</p>
+          <button onclick="selectClass('Spice', 1)">Select</button>
+        </div>
+
+        <div class="card">
+          <h3>Bonebreaker</h3>
+          <p>Ciężki wojownik. Większa siła startowa.</p>
+          <button onclick="selectClass('Bonebreaker', 2)">Select</button>
+        </div>
+
+        <div class="card">
+          <h3>Aegis</h3>
+          <p>Obrońca. Stabilny rozwój i twarda skóra.</p>
+          <button onclick="selectClass('Aegis', 1)">Select</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="battle-section">
+      <h2>Dragon Hunt</h2>
+      <p>Klikaj, by zdobywać gold i XP</p>
+      <button id="dragonBtn" class="dragon-btn" onclick="fightDragon()">
+        ⚔️ Attack Dragon
+      </button>
+    </section>
+
+    <section class="upgrades">
+      <h2>Upgrades</h2>
+      <div class="upgrade-row">
+        <button onclick="buyUpgrade()">Upgrade sword (Cost: <span id="upgradeCost">25</span> gold)</button>
+      </div>
+      <div class="upgrade-row">
+        <button onclick="resetGame()">Reset Game</button>
+      </div>
+    </section>
+
+    <section class="log-section">
+      <h2>Battle Log</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
